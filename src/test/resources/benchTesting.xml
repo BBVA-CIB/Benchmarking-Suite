@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<suite timeUnit="NANOSECONDS" exportJSON="false" exportCSV="true">
+	<test depends="" name="test1" id="1">
+		<initialization file="C:\comunytek\BenchmarkSuite\src\test\resources\test1Basic.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job
+			conditionBean="ExpirationCondition" conditionScope="ACTION" delay="100" instances="2" depends="" name="job1" id="1" periodic="true" period="1000">
+			<action beanName="ExampleAction" name="action1" id="1" />
+			<action beanName="ExampleAction" name="action2" id="2" />
+		</job>
+		<job
+			conditionBean="ExpirationCondition" conditionScope="JOB" delay="100" instances="3" depends="1" name="job2" id="2" period="0" periodic="true">
+			<action beanName="ExampleAction" name="action2" id="2" />
+		</job>
+	</test>	
+<!-- 	<test depends="" name="test2" id="2"> -->
+<!-- 		<initialization file="C:\comunytek\BenchmarkSuite\src\test\resources\test1Spring.xml"> -->
+<!-- 			<initBean>InitJUnit</initBean> -->
+<!-- 		</initialization> -->
+<!-- 		<job -->
+<!-- 			conditionBean="ExpirationCondition" conditionScope="ACTION" delay="100" instances="2" depends="" name="job1" id="1" periodic="true" period="0"> -->
+<!-- 			<action beanName="ExampleAction" name="action1" id="1" /> -->
+<!-- 			<action beanName="ExampleAction" name="action2" id="2" /> -->
+<!-- 		</job> -->
+<!-- 		<job -->
+<!-- 			conditionBean="ExpirationCondition" conditionScope="JOB" delay="100" instances="3" depends="1" name="job2" id="2" periodic="true" period="0"> -->
+<!-- 			<action beanName="ExampleAction" name="action2" id="2" /> -->
+<!-- 		</job> -->
+<!-- 	</test>	 -->
+<!-- 	<test depends="2" name="test3" id="3"> -->
+<!-- 		<initialization file="C:\comunytek\BenchmarkSuite\src\test\resources\test1Spring.xml"> -->
+<!-- 			<initBean>InitJUnit</initBean> -->
+<!-- 		</initialization> -->
+<!-- 		<job -->
+<!-- 			conditionBean="NumIterationsCondition_5" conditionScope="ACTION" delay="100" instances="2" depends="" name="job1" id="1" periodic="true" period="1000"> -->
+<!-- 			<action beanName="ExampleAction" name="action1" id="1" /> -->
+<!-- 			<action beanName="StartMeasure1" name="medida1" id="3" /> -->
+<!-- 				<action beanName="ExampleAction" name="action2" id="2" /> -->
+<!-- 			<action beanName="EndMeasure1" name="medida1" id="4" /> -->
+<!-- 		</job> -->
+<!-- 		<job -->
+<!-- 			conditionBean="ExpirationCondition" conditionScope="JOB" delay="100" instances="2" depends="1" name="job2" id="2" periodic="true" period="0"> -->
+<!-- 			<action beanName="ExampleAction" name="action2" id="2" /> -->
+<!-- 		</job> -->
+<!-- 	</test>	 -->
+
+</suite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<suite timeUnit="NANOSECONDS" exportJSON="false" exportCSV="true">
+	<test depends="" name="test2" id="2">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job conditionBean="NumIterationsCondition_10000" conditionScope="ACTION"
+			instances="10" depends="" name="job2" id="1" periodic="true"
+			period="0" measures="true">
+				<action beanName="TestPerformance" name="action2" id="1" />
+		</job>
+	</test>	
+</suite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<suite timeUnit="NANOSECONDS" exportJSON="false" exportCSV="false">
+	<test depends="" name="test1" id="1">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job depends="" name="job1" id="1" instances="1">
+			<action beanName="InstanceAction" name="action1" id="1" />
+		</job>
+	</test>	
+<!-- 	<test depends="1" name="test2" id="2">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job name="job2" id="2" instances="4">
+			<action beanName="InstanceAction" name="action2" id="2" />
+		</job>
+	</test>	 -->
+</suite>

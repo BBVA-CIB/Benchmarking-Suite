@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	classpath:org/springframework/beans/factory/xml/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/util 
+	http://www.springframework.org/schema/util/spring-util.xsd 
+	http://www.springframework.org/schema/context 
+	classpath:org/springframework/context/config/spring-context-3.0.xsd	">
+
+<!--  http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+http://www.springframework.org/schema/context/spring-context-3.0.xsd -->
+	<context:annotation-config />
+	<context:component-scan base-package="com.bbva.kltt.benchmark" />
+
+
+
+	<!-- ******************** -->
+	<!-- Init beans -->
+	<!-- ******************** -->
+	<bean id="InitJUnit" class="com.bbva.kltt.benchmark.tests.basics.InitTest"/>
+
+	<!-- ******************** -->
+	<!-- Conditional beans -->
+	<!-- ******************** -->
+	<bean id="ExpirationCondition"
+		class="com.bbva.kltt.benchmark.basics.conditions.ExpirationTimeCondition"
+		scope="prototype">
+		<property name="expirationTime" value="1000" />
+	</bean>
+	<bean id="NumIterationsCondition_5"
+		class="com.bbva.kltt.benchmark.basics.conditions.NumIterationsCondition"
+		scope="prototype">
+		<property name="numIterations" value="5" />	
+    </bean>
+	<bean id="NumIterationsCondition_1000"
+		class="com.bbva.kltt.benchmark.basics.conditions.NumIterationsCondition"
+		scope="prototype">
+		<property name="numIterations" value="1000" />
+	</bean>	
+	<bean id="NumIterationsCondition_5000"
+		class="com.bbva.kltt.benchmark.basics.conditions.NumIterationsCondition"
+		scope="prototype">
+		<property name="numIterations" value="5000" />
+	</bean>		
+	<bean id="NumIterationsCondition_100000"
+		class="com.bbva.kltt.benchmark.basics.conditions.NumIterationsCondition"
+		scope="prototype">
+		<property name="numIterations" value="100000" />
+	</bean>		
+	<bean id="NumIterationsCondition_10000"
+		class="com.bbva.kltt.benchmark.basics.conditions.NumIterationsCondition"
+		scope="prototype">
+		<property name="numIterations" value="10000" />
+	</bean>		
+
+	<!-- ******************** -->
+	<!-- Tests beans -->
+	<!-- ******************** -->
+	<bean id="ExampleAction"
+		class="com.bbva.kltt.benchmark.tests.basics.action.ActionTest"
+		scope="prototype">
+	</bean>
+	<bean id="CacheAction"
+		class="com.bbva.kltt.benchmark.tests.basics.action.ActionCacheTest"
+		scope="prototype">
+	</bean>
+	<bean id="StartMeasure1" class="com.bbva.kltt.benchmark.measures.actions.StartMeasure">
+		<property name="measureName" value="Measure1" />
+	</bean>
+	<bean id="EndMeasure1" class="com.bbva.kltt.benchmark.measures.actions.EndMeasure">
+		<property name="measureName" value="Measure1" />
+	</bean>	
+	<bean id="AddToMap" class="com.bbva.kltt.benchmark.tests.basics.action.AddToMap">
+	</bean>	
+	<bean id="AddToMapString1" class="com.bbva.kltt.benchmark.tests.basics.action.AddToMapString">
+	</bean>	
+	<bean id="AddToMapString2" class="com.bbva.kltt.benchmark.tests.basics.action.AddToMapString2">
+	</bean>	
+	<bean id="ReadFromMapString" class="com.bbva.kltt.benchmark.tests.basics.action.ReadFromMap">
+	</bean>	
+	
+	<bean id="TestPerformance" class="com.bbva.kltt.benchmark.tests.basics.action.TestPerformance">
+	</bean>
+	
+	<bean id="TestPerformanceOwnMeasures" class="com.bbva.kltt.benchmark.tests.basics.action.TestPerformanceMeasures">
+	</bean>
+		
+	<!-- ******************** -->
+	<!-- Main beans -->
+	<!-- ******************** -->
+
+</beans>

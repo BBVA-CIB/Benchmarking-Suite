@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<suite timeUnit="NANOSECONDS" exportJSON="false" exportCSV="true">
+	<test depends="" name="addToMap" id="1">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job conditionBean="NumIterationsCondition_10000" conditionScope="ACTION"
+			instances="1" depends="" name="AddToMapAction" id="1" periodic="true"
+			period="0" measures="true">
+			<action beanName="AddToMap" name="action1" id="1" />
+		</job>
+	</test>
+	<test depends="1" name="addToMapStringWARM" id="2">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job conditionBean="NumIterationsCondition_1000" conditionScope="ACTION"
+			instances="1" depends="" name="AddToMapAction" id="1" periodic="true"
+			period="0" measures="false">
+			<action beanName="AddToMapString1" name="action1" id="1" />
+		</job>
+	</test>	
+	<test depends="2" name="addToMapString2" id="3">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job conditionBean="NumIterationsCondition_10000" conditionScope="ACTION"
+			instances="1" depends="" name="AddToMapAction" id="1" periodic="true"
+			period="0" measures="true">
+			<action beanName="AddToMapString2" name="action1" id="1" />
+		</job>
+	</test>
+	<test depends="3" name="WARMreadFromMapString" id="4">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job instances="1" depends="" name="ReadToMapAction" id="1" periodic="false" period="0" measures="false">
+			<action beanName="ReadFromMapString" name="action1" id="1" />
+		</job>
+	</test>	
+	<test depends="4" name="readFromMapString" id="5">
+		<initialization file="C:/comunytek/BenchmarkSuite/src/test/resources/test1Spring.xml">
+			<initBean>InitJUnit</initBean>
+		</initialization>
+		<job conditionBean="NumIterationsCondition_10000" conditionScope="ACTION"
+			instances="1" depends="" name="ReadToMapAction" id="1" periodic="true"
+			period="0" measures="true">
+			<action beanName="ReadFromMapString" name="action1" id="1" />
+		</job>
+	</test>
+</suite>
